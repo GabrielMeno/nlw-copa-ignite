@@ -15,8 +15,8 @@ datasource db {
 }
 
 model Pool {
-  id        String   @id @default(cuid())
-  title     String
-  code      String   @unique
-  createdAt DateTime @default(now())
+  id      String   @id @default(cuid())
+  title   String
+  code    String   @unique
+  created DateTime @default(now())
 }
