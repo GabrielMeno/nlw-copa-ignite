@@ -1,5 +1,20 @@
-export default function Home() {
+export default function Home(props) {
   return (
-    <h1> menorzin </h1>
+    <h1> Contagem: {props.count} </h1>
   )
 }
+
+export const getServerSideProps =async (j) => {
+  const response = await fetch('http://localhost:3333/pools/count')
+  const data = await response.json()
+  
+  console.log(data)
+
+  return {
+    props: {
+      count: data.count,
+    }
+  }
+
+}
+
